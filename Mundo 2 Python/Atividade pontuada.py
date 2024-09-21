@@ -23,7 +23,7 @@ for i in range (QTD):
     numeros = random.randint(-10 , 10)#Apenas para teste rapidos.
     print(f"\033[1;32m{i+1}º numero: {numeros}")
     numeros_armazenados.append(numeros)
-    time.sleep(0.9)
+    time.sleep(0.5)
 os.system("cls||clear")
 
 #Processando dados:
