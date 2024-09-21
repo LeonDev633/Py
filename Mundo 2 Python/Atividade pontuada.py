@@ -19,9 +19,9 @@ def logo_senai():
 # Solicitando dados:
 logo_senai()
 for i in range (QTD):
-    """numeros=int(input(f"\033[1;32m{i+1}º numero: "))"""
-    numeros = random.randint(-10 , 10)#Apenas para teste rapidos.
-    print(f"\033[1;32m{i+1}º numero: {numeros}")
+    numeros=int(input(f"\033[1;32m{i+1}º numero: "))
+    """numeros = random.randint(-10 , 10)#Apenas para teste rapidos.
+    print(f"\033[1;32m{i+1}º numero: {numeros}")"""
     numeros_armazenados.append(numeros)
     time.sleep(0.5)
 os.system("cls||clear")
