@@ -19,11 +19,10 @@ def logo_senai():
 # Solicitando dados:
 logo_senai()
 for i in range (QTD):
-    """numeros=int(input(f"\033[1;32m{i+1}º numero: "))"""
-    numeros = random.randint(-10 , 10)#Apenas para teste rapidos.
-    print(f"\033[1;32m{i+1}º numero: {numeros}")
+    numeros= int(input(f"\033[1;32m{i+1}º numero: "))
+    # numeros = random.randint(-10 , 10)#Apenas para teste rapidos.
+    # print(f"\033[1;32m{i+1}º numero: {numeros}") 
     numeros_armazenados.append(numeros)
-    time.sleep(0.5)
 os.system("cls||clear")
 
 #Processando dados:
@@ -42,24 +41,26 @@ impares,pares = impar_par(numeros_armazenados)
 def positivo_negativo(a):
     lista_negativo = []
     lista_positivo = []
+    lista_neutra = []
     for numeros in a :
         if numeros < 0 :
             lista_negativo.append(numeros)
+        elif numeros == 0:
+            lista_neutra.append(numeros)
         else:
             lista_positivo.append(numeros)
-    return lista_positivo, lista_negativo
+    return lista_positivo, lista_negativo, lista_neutra
 
-positivo, negativo = positivo_negativo(numeros_armazenados)
+positivo, negativo, neutros = positivo_negativo(numeros_armazenados)
 
 def media (a):
     qtd = len(a)
-    soma = sum(a)
-    for numero in a:
-        if  (numero>=0) or (numero <0):
-            media = soma/qtd
-            return media
-        else:
-            return 0
+    if qtd != 0:
+        soma = sum(a)
+        media = soma/qtd
+        return media
+    else:
+        return 0
 
 #Retornando dados para impressão:
 media_total = media(numeros_armazenados)
@@ -85,7 +86,9 @@ time.sleep(1)
 print("\n\033[4;37m======= MÉDIA ========\033[m\n")
 time.sleep(1)
 print(f"\033[1;30mA média dos números pares foram {media_pares}")
+print(f"A média dos números impares foram 0")
 print(f"A média dos números impares foram {media_impares:}")
+
 print(f"A média dos números totais foram {media_total:}")
 
 time.sleep(1)
