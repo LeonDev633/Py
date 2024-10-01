@@ -62,8 +62,7 @@ while True:
                     os.system("cls||clear")
                     opcao
                 else: 
-                    break
-                
+                    break             
             case 2:
                 print("\n=== EFETUANDO LOGIN ===\n")
                 login = input("Usuario: ")
@@ -74,13 +73,13 @@ while True:
                 for dados in list_dados:
                     if dados.usuario == login:
                         if dados.senha == senha1:
-                            os.system("cls||clear")
                             print("=== LOGIN EFETUADO ===")
                             time.sleep(5)
+                            os.system("cls||clear")
+                            break
                         else: 
                             print("Senha incorreta!")
                     else:
                         print("Login incorreto!")
             case 3:
                 print("=== EM DESENVOLVIMENTO ===")
-                                   

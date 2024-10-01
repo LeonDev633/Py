@@ -76,8 +76,8 @@ logo_senai()
 print("\n=== Entrada de dados ===\n")
 for i in range(QTD):
     while True:
-        """numero1=random.randint(-10,10) #Teste rapido:"""
-        numero1 = int(input(f"Informe o {i+1}º numero: "))
+        numero1=random.randint(-10,10) #Teste rapido:
+        #numero1 = int(input(f"Informe o {i+1}º numero: "))
         lista_num.append(numero1)
         break
 
