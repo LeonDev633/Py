@@ -34,7 +34,6 @@ class Dados:
     usuario : str
     senha : int
 
-
 while True:
     while True:
         logo()
