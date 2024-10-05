@@ -32,14 +32,14 @@ def calcular_media(a):
         return media
 
 def criando_arquivo(a,b):
-    with open(a,"a") as arquivo_dados:
+    with open(a,"w") as arquivo_dados:
         for familia in b:
             arquivo_dados.write(f"{familia.salario}, {familia.filho}\n")
     arquivo_dados.close()
     print("\n=== Dados Salvos ===\n")
 
 def criando_arquivo_final(a,b):
-    with open(a,"w") as arquivo_dados:
+    with open(a,"a") as arquivo_dados:
         for dado in b:
             arquivo_dados.write(f"{dado}, \n")
     arquivo_dados.close()
@@ -72,7 +72,6 @@ while True:
             lista_familia.append(familia)
             nome_arquivo = "dados_analise.txt"
             criando_arquivo(nome_arquivo,lista_familia)
-            limpar_terminal()
 
         case 2:
             lista_familia = []
@@ -83,7 +82,7 @@ while True:
             lista_familia = lendo_arquivo(nome_arquivo)
             numero_familias = 0
 
-            for familia in (lista_familia):
+            for i,familia in enumerate(lista_familia):
                 numero_familias += 1
                 lista_filhos.append(familia.filho)
                 lista_salario.append(familia.salario)
