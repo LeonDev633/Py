@@ -4,34 +4,41 @@ import time
 
 os.system("cls||clear")
 
-contador = 0
-derrotas = 0
-vitoria = 0
 
 while True:
-    num=random.randint(1,10)
-
-    print(f"""\033[35m==== Qual numero eu pensei ? ====\033[m\n\n\033[35m ======== DICA ========\033[m\n\n O numero está entre 1 e 10.\nVocê tem 3 tentativas\n""")
     while True:
-        numero=int(input("Informe o numero: "))
-        if numero == num:
-            print("\033[2;35mVocê acertou !\033[m")
-            vitoria +=1
-            os.system("cls||clear")
-            time.sleep(5)
-            break
-        else:
-            print("Você errou, tente novamente.")
-            time.sleep(1)
-            contador +=1
-            print(f"{contador} tentativas utilizadas.")
-            time.sleep(1)
-            if contador == 3:
-                contador = 0
-                derrotas +=1
-                print("Você perdeu, vamos tentar novamente com outro numero.")
+        num=random.randint(1,10)
+        derrotas = 0
+        vitoria = 0
+        tentativa=0
+        for i in range(3):
+            print("="*40)
+            print(f"{"ACERTE O NUMERO":^40}")
+            print("="*40)
+            print(f"{"Derrotas: ":^15}{derrotas}",end=" ")
+            print(f"{"Vitorias: ":^15}{vitoria}")
+            print("="*40)
+            print(f"{"DICA":^40}")
+            print(f"{"EU PENSEI EM UM NUMERO ENTRE 1 E 10":^40}")
+            print("="*40)
+            
+            tentativa = i+1
+            numero=int(input(f"{tentativa}ª Tentativa: "))
+            if numero == num:
+                print("\033[2;35mVocê acertou !\033[m")
+                vitoria +=1
                 time.sleep(2)
                 os.system("cls||clear")
                 break
-    print(f"Derrotas: {derrotas} || Vitorias: {vitoria}")
-                
+            elif numero != num:
+                print("Você errou, tente novamente.")
+                time.sleep(1)
+                os.system("cls||clear")
+                if  tentativa == 3:
+                    derrotas+=1
+                    print("="*40)
+                    print(f"{"Você usou o numero maximo de tentativas":^40}")
+                    print("="*40)
+                    os.system("cls||clear")
+                    
+                    
