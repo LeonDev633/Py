@@ -27,24 +27,17 @@ while True:
             print(f"{f"VOCÊ ACERTOU, PARABÉNS!":^40}")
             vitoria += 1
             print("*"*40)
-            time.sleep(1)
+            time.sleep(2)
             break
         elif tentativas == 3:
             derrotas += 1
             print(f"{"VOCÊ NÃO CONSEGUIU ACERTAR":^40}")
             print(f"{f"O NUMERO QUE EU PENSEI FOI {python}":^40}")
-            time.sleep(1)
+            time.sleep(2)
             break
     os.system("cls||clear")
     print("=-"*20)
     print(f"{"Derrotas: ":^15}{derrotas}",end=" ")
     print(f"{"Vitorias: ":^15}{vitoria}")
     print("="*40)
-    time.sleep(2)
-        
-        
-        
-    
- 
-        
-                    
+    time.sleep(3)               
